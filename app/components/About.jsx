@@ -11,7 +11,10 @@ export default class About extends React.Component{
 */
 let About = (props)=>{
 	 return (
-      <h3>About Component</h3>
+      <div>
+      	<h3>About</h3>
+      	<p>Bem vindo a página About!</p>
+      </div>
     );
 };
 export default About
