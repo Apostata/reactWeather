@@ -12,8 +12,19 @@ export default class About extends React.Component{
 let About = (props)=>{
 	 return (
       <div>
-      	<h3>About</h3>
-      	<p>Bem vindo a página About!</p>
+      	<h1 className="text-center">About</h1>
+      	<p>Esta é uma aplicação feita em react para o curso completo de React</p>
+        <p>
+          Aqui são algumas das ferramentas usadas:
+        </p>
+        <ul>
+          <li>
+            <a href="https://facebook.github.io/react">React</a> - Javascript Framework
+          </li>
+           <li>
+              <a href="http://openweathermap.org">Open Weather Map</a> - Usado para buscar a temperatura por cidade.
+            </li>
+        </ul>
       </div>
     );
 };
