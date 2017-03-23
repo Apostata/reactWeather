@@ -44,6 +44,7 @@ module.exports = {
 	    ]
   	},
   	devtool: 'cheap-module-eval-source-map',
+  	//devtool: 'cheap-module-eval',
 
 	plugins: [
 	  // Minify assets.
@@ -51,10 +52,16 @@ module.exports = {
 		    compress: {
 		      warnings: false // https://github.com/webpack/webpack/issues/1496
 		    }
-		})*/
+		}),*/
 		new webpack.ProvidePlugin({
 			"$": 'jqeury',
 			"jQuery": 'jquery'
-		})
+		}),
+
+		/*new webpack.DefinePlugin({
+	    	'process.env': {
+		      'NODE_ENV': JSON.stringify('production')
+		    }
+	  	})*/
 	]
 };
