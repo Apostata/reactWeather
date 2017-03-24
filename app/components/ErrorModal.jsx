@@ -30,7 +30,9 @@ class ErrorModal extends React.Component{
 	}
 };
 
-/*ErrorModal.defaultProps ={
+/*
+------- Recomendado pelo Facebook ----------
+ErrorModal.defaultProps ={
 	title: "Error"
 };
 

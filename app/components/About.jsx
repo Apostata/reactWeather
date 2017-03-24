@@ -12,7 +12,7 @@ export default class About extends React.Component{
 let About = (props)=>{
 	 return (
       <div>
-      	<h1 className="text-center">About</h1>
+      	<h1 className="text-center page-title">About</h1>
       	<p>Esta é uma aplicação feita em react para o curso completo de React</p>
         <p>
           Aqui são algumas das ferramentas usadas:

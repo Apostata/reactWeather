@@ -29,7 +29,7 @@ export default class Nav extends React.Component{
 		    		<form onSubmit={this.onSearch}>
 		    			<ul className="menu">
 		    				<li>
-		    					<input type="search" placeholder="Buscar temperatura"/>
+		    					<input type="search" placeholder="Buscar temperatura por cidade"/>
 		    				</li>
 		    				<li>
 		    					<input type="submit" className="button" value="Buscar temperatura"/>
