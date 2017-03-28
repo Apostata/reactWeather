@@ -14,6 +14,7 @@ class ErrorModal extends React.Component{
 	};
 
 	componentDidMount(){
+		/*
 		let {title, message} = this.props;
 		let modalMarkup = (
 			<div id="error-modal" className="reveal tiny text-center" data-reveal="">
@@ -27,14 +28,24 @@ class ErrorModal extends React.Component{
 
 		let $modal = jQuery(ReactDOMServer.renderToString(modalMarkup));
 		jQuery(ReactDOM.findDOMNode(this)).html($modal);
+		*/
 		let modal = new Foundation.Reveal(jQuery('#error-modal'));
 		modal.open();
 	}
 
 	render(){
+		let {title, message} = this.props;
 
-		return(
-			<div></div>
+		return(//div extra resolve o problema do modal sem precisar fazer as coisas extras (comentadas no componentDidMount)
+			<div>
+				<div id="error-modal" className="reveal tiny text-center" data-reveal="">
+					<h4>{title}</h4>
+					<p>{message}</p>
+					<p>
+						<button className="button hollow" data-close="">Okay</button>
+					</p>				
+				</div>
+			</div>
 		);
 	}
 };
