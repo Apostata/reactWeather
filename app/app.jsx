@@ -8,7 +8,7 @@ import Examples from 'Examples';
 
 //load foundation
 import 'style!css!foundation-sites/dist/foundation.min.css';
-import 'style!css!aplicationStyles';
+import 'style!css!sass!aplicationStyles';
 jQuery(document).foundation();
 
 ReactDOM.render(//se não encontrar about e nem examples então ele carrega weather que é o index
