@@ -10,14 +10,20 @@ export default class Weather extends React.Component{
 		super(); // herda as propriedades da classe React.Component
 		this.state ={
 			isLoading: false,
-			errorMessage: undefined
+			errorMessage: undefined,
 		}
 	}
 	
 
 	handleSearch = (location)=>{
 		//debugger;
-		this.setState({isLoading:true});
+		this.setState({
+			isLoading:true,
+			errorMessage:undefined,
+			location: undefined,
+			temp:undefined
+		});
+
 		openWeatherMap.getTemp(location).then((temp)=>{
 
 			this.setState({
@@ -32,6 +38,24 @@ export default class Weather extends React.Component{
 				errorMessage:err.message
 			});
 		});
+	}
+
+	componentDidMount(){
+		var location = this.props.location.query.location; //pega da barra de endereços a variavel location
+
+		if(location && location.length > 0){
+			this.handleSearch(location);
+			window.location.hash = '#/'; //reseta a url da barra de endereço, tirando a variavel location
+		}
+	}
+
+	componentWillReceiveProps(newProps){
+		var location = newProps.location.query.location; //pega da barra de endereços a variavel location
+
+		if(location && location.length > 0){
+			this.handleSearch(location);
+			window.location.hash = '#/'; //reseta a url da barra de endereço, tirando a variavel location
+		}
 	}
 
 	render() {
