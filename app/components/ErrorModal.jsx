@@ -1,4 +1,6 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import ReactDOMServer from 'react-dom/server';
 
 class ErrorModal extends React.Component{
 	
@@ -12,13 +14,8 @@ class ErrorModal extends React.Component{
 	};
 
 	componentDidMount(){
-		let modal = new Foundation.Reveal(jQuery('#error-modal'));
-		modal.open();
-	}
-
-	render(){
 		let {title, message} = this.props;
-		return(
+		let modalMarkup = (
 			<div id="error-modal" className="reveal tiny text-center" data-reveal="">
 				<h4>{title}</h4>
 				<p>{message}</p>
@@ -26,7 +23,19 @@ class ErrorModal extends React.Component{
 					<button className="button hollow" data-close="">Okay</button>
 				</p>				
 			</div>
-		)
+		);
+
+		let $modal = jQuery(ReactDOMServer.renderToString(modalMarkup));
+		jQuery(ReactDOM.findDOMNode(this)).html($modal);
+		let modal = new Foundation.Reveal(jQuery('#error-modal'));
+		modal.open();
+	}
+
+	render(){
+
+		return(
+			<div></div>
+		);
 	}
 };
 
